@@ -12,7 +12,7 @@ io.set('log level', 1);
 
  // App Stuff
 app.use('/public', express.static(__dirname + '/public'));
-app.listen(config.port);
+app.listen(8888);
 app.set("view engine", "html");
 app.set("view options", {layout: false});
 app.register(".html", require("jqtpl").express);

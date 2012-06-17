@@ -6,15 +6,14 @@
         <LINK REL="SHORTCUT ICON" HREF="/public/favicon.ico" /> 
         <meta name="keywords" content="node, nodejs, javascript, p2p, filesharing, webp2p, web peer to peer, p2pweb, open source" />
 		<meta name="description" content="DirtyShare is a proof of concept Peer to Peer filesharing system written in pure Javascript with Socket.io and Node.js." />
-        <link href="/public/style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="public/style.css" rel="stylesheet" type="text/css" media="screen" />
         <link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Monsieur+La+Doulaise' rel='stylesheet' type='text/css'>
         <script type="text/javascript"
                 src="http://code.jquery.com/jquery-1.5.2.js"></script>
 
-		<script src="/socket.io/socket.io.js"></script>
-		<script src="/public/socket.io.js"></script>
-		<script type="text/javascript" src="/public/jquery.url.js"></script>
+        <script src="http://localhost:8888/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="public/jquery.url.js"></script>
     </head>
     <body>
 
@@ -29,7 +28,7 @@
 					 "\"My God, That\'s Filthy!\"", 
 					 "\"You Dirty Bastards!\"", 
 					 "\"Sheer And Utter Filth!\"", 
-					 "\"What a Shame!\"", 
+					 "\"What a Shame!\""
 					];
 				$('#subheader').html('<i>' + filth[Math.floor(Math.random()*filth.length)] + '</i>');
 			});
@@ -66,12 +65,12 @@
 		</script>
 
 		<br />
-        <div id="description">
+        <div>
     		Share this URL: <div id="shareurl"></div>
     	</div>
 
     	<div id="what">
- 			<i><a onClick="$('#about').slideDown('slow');">What is this?</a><i>
+ 			<i><a onClick="$('#about').slideDown('slow');">What is this?</a></i>
     	</div>
 
     	<div id="about" style="display: none;">
@@ -97,14 +96,14 @@
 
 	        <div id="warnings">
 	        </div>
-        </center>
+        </div>
 
 		<script>
 
 		var fid = 0;
 		var files = {};
 		var downfiles = {};
-		var socket = io.connect('http://${domain}');
+		var socket = io.connect('http://localhost:8888');
 		//read the requested bytes
 		var reader;
 		var canHost = true;
